@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+  <div class="hero-inner">
+    <h1>Hi — I'm Your Nishchal.</h1>
+    <p>Frontend developer · Designer · Problem solver. I build simple & usable web apps.</p>
+    <p><a class="btn" href="{{ url_for('contact') }}">Get in touch</a></p>
+  </div>
+</section>
+
+<section class="about">
+  <h2>About me</h2>
+  <p>Short bio: A MCA Student , Like to Code , the tech i  use (Python, Flask,  CSS).</p>
+</section>
+
+<section class="projects">
+  <h2>Projects</h2>
+  <div class="project-grid">
+    {% for p in projects %}
+      <article class="project-card">
+        <h3>{{ p.title }}</h3>
+        <p>{{ p.desc }}</p>
+        <p><a href="{{ p.link }}">View →</a></p>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

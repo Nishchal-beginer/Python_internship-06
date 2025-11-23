@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="contact-section">
+  <h2>Contact</h2>
+  <p>Want to work together or say hi? Drop a message below.</p>
+
+  <form action="{{ url_for('contact') }}" method="post" class="contact-form" autocomplete="off">
+    <label>
+      <span>Name</span>
+      <input type="text" name="name" required />
+    </label>
+
+    <label>
+      <span>Email</span>
+      <input type="email" name="email" required />
+    </label>
+
+    <label>
+      <span>Message</span>
+      <textarea name="message" rows="6" required></textarea>
+    </label>
+
+    <button type="submit" class="btn">Send message</button>
+  </form>
+</section>
+{% endblock %}
